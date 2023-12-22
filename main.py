@@ -1,12 +1,14 @@
 
-num1 = 5
-num2 = 3
-sum = num1 + num2
-result = num1 * num2 + sum
-
 def main():
- print("SUM: ", sum)
- print("result: ", result)
+ name = "Станислав"
+ age = 20
+ print("Имя мне -", name)
+ print("Возраст мой -", age, " лет")
 
+ age += 1
+ print("через год будет", age, " год")
+
+ is_student = True
+ print("я", is_student, "студент!")
 
 main()
