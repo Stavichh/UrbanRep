@@ -1,10 +1,7 @@
 
-def main():
-    cars_total = ["BMW", "MB", "LADA", "KIA", "HONDA"]
-    cars_count = 0
-    for cars in cars_total:
-        print("я ехду на авто марки - ", cars)
-        cars_count += 10
-    print(cars_count)
+def print_params(number):
+    for i in range(2):
+        print(number)
 
-main()
+print_params(5)
+print_params(10)
