@@ -1,19 +1,10 @@
 
-def print_params(a = 1, b = "первый", c = True):
-    print("параметры следующие - ", a, b, c)
+def test():
+    a, b  = 1, 2
+    print("test1 params - ", a, b)
 
+def test2(a, b, c):
+    print("test2 params - ", a, b, c)
 
-print_params()
-print_params(2, 3, 8)
-print_params(4, 15)
-print_params("new", b = "old", c = None)
-
-print_params(b = 25)
-print_params(c = [1,2,3])
-
-
-value_list = [125, "bold", False]
-value_dict = {"a":5, "b":"последний", "c":False}
-
-print_params(*value_list)
-print_params(**value_dict)
+test()
+test2(3, 4, 5)
