@@ -1,20 +1,30 @@
 
-def test(*args):
-    for i, arg in enumerate(args):
-        print("нынешний праметр - ", arg, " на позиции", i)
+import simple_draw as sd
 
 
-test(6, "damn", "word", True, None)
+length = 200
+point = sd.get_point(300, 300)
+
+#v1 = sd.get_vector(start_point=point, angle = 0, length=length, width=3)
+#v1.draw()
+
+#v2 = sd.get_vector(start_point=v1.end_point, angle = 120, length=length, width=3)
+#v2.draw()
+
+#v3 = sd.get_vector(start_point=v2.end_point, angle = 240, length=length, width=3)
+#v3.draw()
+
+def triangle(point, angle=0):
+    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+    v1.draw()
+
+    v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 120, length=length, width=3)
+    v2.draw()
+
+    v3 = sd.get_vector(start_point=v2.end_point, angle= angle + 240, length=length, width=3)
+    v3.draw()
 
 
-
-print()
-
-def rec(n):
-    if n == 1:
-        return 1
-    factorial = rec(n = n-1)
-    return n * factorial
-
-
-print(rec(3))
+point_0 = sd.get_point(300, 300)
+triangle(point = point_0, angle=0)
+sd.pause()
