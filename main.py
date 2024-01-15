@@ -2,29 +2,40 @@
 import simple_draw as sd
 
 
-length = 200
-point = sd.get_point(300, 300)
+sd.resolution = (1200, 720)
+point_0 = sd.get_point(100, 500)
 
-#v1 = sd.get_vector(start_point=point, angle = 0, length=length, width=3)
-#v1.draw()
+x = 250
+y = 500
 
-#v2 = sd.get_vector(start_point=v1.end_point, angle = 120, length=length, width=3)
-#v2.draw()
+x2 = 300
+y2 = 350
 
-#v3 = sd.get_vector(start_point=v2.end_point, angle = 240, length=length, width=3)
-#v3.draw()
+while True:
+    sd.clear_screen()
+    point = sd.get_point(x, y)
+    sd.snowflake(center=point, length=50)
+    y -= 10
+    if y < 50:
+        break
+    x = x * 1.1
 
-def triangle(point, angle=0):
-    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
-    v1.draw()
-
-    v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 120, length=length, width=3)
-    v2.draw()
-
-    v3 = sd.get_vector(start_point=v2.end_point, angle= angle + 240, length=length, width=3)
-    v3.draw()
+    point2 = sd.get_point(x2, y2)
+    sd.snowflake(center=point2, length=50)
+    y2 -= 15
+    if y2 < 50:
+        break
+    x2 = x2 * 1.1
 
 
-point_0 = sd.get_point(300, 300)
-triangle(point = point_0, angle=0)
+
+    sd.sleep(0.1)
+    if sd.user_want_exit():
+        break
+
+
+
+
+
+
 sd.pause()
