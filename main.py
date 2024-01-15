@@ -1,10 +1,20 @@
 
-def test():
-    a, b  = 1, 2
-    print("test1 params - ", a, b)
+def test(*args):
+    for i, arg in enumerate(args):
+        print("нынешний праметр - ", arg, " на позиции", i)
 
-def test2(a, b, c):
-    print("test2 params - ", a, b, c)
 
-test()
-test2(3, 4, 5)
+test(6, "damn", "word", True, None)
+
+
+
+print()
+
+def rec(n):
+    if n == 1:
+        return 1
+    factorial = rec(n = n-1)
+    return n * factorial
+
+
+print(rec(3))
